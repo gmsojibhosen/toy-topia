@@ -10,4 +10,19 @@ font-family: "Inter", sans-serif;
   font-style: normal;
 }
 
- 
+
+
+.swiper-pagination-bullet {
+  @apply bg-[#FFD93D] opacity-40 p-2;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  @apply bg-[#FFD93D] opacity-100;
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply  bg-[#FFD93D] text-gray-400 rounded-full p-4 shadow-lg;
+}
+
