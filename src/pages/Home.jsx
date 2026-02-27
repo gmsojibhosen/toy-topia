@@ -1,11 +1,13 @@
 import React from "react";
 import Slider from "../components/Slider";
 import RatingToy from "../components/RatingToy";
+import Category from "../components/Category";
 const Home = () => {
   return (
     <section>
       <Slider />
       <RatingToy />
+      <Category />
     </section>
   );
 };

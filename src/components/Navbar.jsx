@@ -1,16 +1,24 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   const navLink = (
     <>
-      <Link className="hover:bg-[#e9c121]" to={"/"}>
-        Home
-      </Link>
-      <Link className="hover:bg-[#e9c121]" to={"toys"}>
-        Toys
-      </Link>
-      <li className="hover:bg-[#e9c121]">About</li>
+      <li className="mr-2">
+        <NavLink className="hover:bg-yellow-400" to={"/"}>
+          Home
+        </NavLink>
+      </li>
+      <li className="mr-2">
+        <NavLink className="hover:bg-yellow-400" to={"toys"}>
+          Toys
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="hover:bg-yellow-400" to={"/srcprofile"}>
+          My Profile
+        </NavLink>
+      </li>
     </>
   );
   return (
@@ -42,31 +50,33 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
-          <Link to={"/"} className=" text-xl text-[#e9c121] font-bold">
+          <Link to={"/"} className=" text-xl text-yellow-400 font-bold">
             Toy Topia
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link className="hover:bg-[#e9c121]" to={"/"}>
+            <li className="mr-2">
+              <NavLink className="hover:bg-yellow-400" to={"/"}>
                 Home
-              </Link>
+              </NavLink>
             </li>
-            <li>
-              <Link className="hover:bg-[#e9c121]" to={"toys"}>
+            <li className="mr-2">
+              <NavLink className="hover:bg-yellow-400" to={"toys"}>
                 Toys
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <a>Profile</a>
+              <NavLink className="hover:bg-yellow-400" to={"/srcprofile"}>
+                My Profile
+              </NavLink>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
           <div className="">
-            <a className="btn mr-3 bg-[#FFD93D]">Log in</a>
-            <a className="btn bg-[#FFD93D] ">Register</a>
+            <a className="btn mr-3 bg-yellow-400 text-gray-600">Log in</a>
+            <a className="btn bg-yellow-400 text-gray-600">Register</a>
           </div>
         </div>
       </div>

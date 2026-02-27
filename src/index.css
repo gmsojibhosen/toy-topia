@@ -13,16 +13,19 @@ font-family: "Inter", sans-serif;
 
 
 .swiper-pagination-bullet {
-  @apply bg-[#FFD93D] opacity-40 p-2;
+  @apply bg-yellow-400 opacity-40 p-2;
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
-  @apply bg-[#FFD93D] opacity-100;
+  @apply bg-yellow-400 opacity-100;
 }
 
 
 .swiper-button-next,
 .swiper-button-prev {
-  @apply  bg-[#FFD93D] text-gray-400 rounded-full p-4 shadow-lg;
+  @apply  bg-yellow-400 text-gray-400 rounded-full p-4 shadow-lg;
 }
 
+li a.active {
+@apply   bg-yellow-400;
+}

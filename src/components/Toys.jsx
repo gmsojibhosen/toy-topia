@@ -27,12 +27,10 @@ const Toys = ({ toys }) => {
         <div className="flex justify-between items-center mt-2">
           <p className="text-lg font-medium text-gray-600">$ {price}</p>
 
-          <button className="w-1/2 bg-[#FFD93D]  py-2 rounded-xl hover:bg-[#f3cb2c] transition">
+          <button className="w-1/2 bg-yellow-400  py-2 rounded-xl hover:bg-yellow-400 transition">
             View More
           </button>
-            </div>
-            
-            
+        </div>
       </div>
     );
 };

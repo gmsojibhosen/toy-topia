@@ -8,9 +8,9 @@ const AllToys = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <div className="bg-linear-to-r from-[#fbdb5b]  to-[#f5b906] rounded-3xl p-8 mb-6 text-center mt-6">
-        <h1 className="text-4xl font-extrabold text-gray-800 mb-2">
+        <h2 className="text-4xl font-extrabold text-gray-800 mb-2">
           Explore Our Fun Toys!
-        </h1>
+        </h2>
         <p className="text-gray-700 text-lg">Find toys Wonderful and buy now</p>
       </div>
 
