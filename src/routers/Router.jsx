@@ -36,6 +36,7 @@ export const router = createBrowserRouter([
         element: <Reviews />,
         loader: () => fetch("/reviews.json").then((res) => res.json()),
       },
+      
     ],
   },
 ]);

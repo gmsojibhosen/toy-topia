@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Footer = () => {
     return (
@@ -6,8 +7,10 @@ const Footer = () => {
         <nav className="grid grid-flow-col gap-4">
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <Link to={"/toys"} className="link link-hover">
+            All Toys
+          </Link>
+          <a className="link link-hover">Our Policy</a>
         </nav>
         <nav>
           <div className="grid grid-flow-col gap-4">
