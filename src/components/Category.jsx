@@ -15,7 +15,7 @@ const Category = () => {
          {toysData.map((category, index) => (
            <div
              key={index}
-             className="bg-linear-to-r from-[#fbdb5b]  to-[#f5b906] text-gray-800 p-6 text-center rounded-xl shadow hover:shadow-lg transition"
+             className="bg-base-200 p-6 text-center rounded-xl shadow hover:shadow-lg transition"
            >
              {category.subCategory}
            </div>

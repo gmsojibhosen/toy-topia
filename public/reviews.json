@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "customerName": "Rahim Uddin",
+    "rating": 5,
+    "comment": "My son loves this toy! Very good quality.",
+    "toyName": "Lego Classic Bricks",
+    "date": "2026-02-10"
+  },
+  {
+    "id": 2,
+    "customerName": "Sumaiya Akter",
+    "rating": 4.5,
+    "comment": "Very colorful and safe for kids.",
+    "toyName": "Toy Kitchen Set",
+    "date": "2026-02-12"
+  },
+  {
+    "id": 3,
+    "customerName": "Jahid Hasan",
+    "rating": 5,
+    "comment": "Excellent product. Fast delivery.",
+    "toyName": "Remote Control Car",
+    "date": "2026-02-15"
+  },
+  {
+    "id": 4,
+    "customerName": "Nusrat Jahan",
+    "rating": 4,
+    "comment": "Affordable price and good quality.",
+    "toyName": "Toy Guitar",
+    "date": "2026-02-18"
+  },
+  {
+    "id": 5,
+    "customerName": "Tanvir Ahmed",
+    "rating": 4.8,
+    "comment": "My daughter is very happy with this doll.",
+    "toyName": "Princess Doll Set",
+    "date": "2026-02-20"
+  },
+  {
+    "id": 6,
+    "customerName": "Mim Akter",
+    "rating": 4.2,
+    "comment": "Nice packaging and smooth finishing.",
+    "toyName": "Building Blocks Set",
+    "date": "2026-02-21"
+  },
+  {
+    "id": 7,
+    "customerName": "Shakil Khan",
+    "rating": 5,
+    "comment": "Best toy shop experience so far.",
+    "toyName": "Puzzle Board Game",
+    "date": "2026-02-22"
+  },
+  {
+    "id": 8,
+    "customerName": "Farhana Islam",
+    "rating": 4.7,
+    "comment": "Highly recommended for kids learning toys.",
+    "toyName": "Educational Alphabet Toy",
+    "date": "2026-02-25"
+  }
+]

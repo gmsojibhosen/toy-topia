@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Home from "../pages/Home";
 import AllToys from "../components/AllToys";
+import Reviews from "../components/Reviews";
 
 export const router = createBrowserRouter([
   {
@@ -13,7 +14,7 @@ export const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home />,
         loader: () => fetch("/toys.json").then((res) => res.json()),
       },
@@ -29,6 +30,11 @@ export const router = createBrowserRouter([
         path: "toys",
         element: <AllToys />,
         loader: () => fetch("/toys.json").then((res) => res.json()),
+      },
+      {
+        path: "reviews",
+        element: <Reviews />,
+        loader: () => fetch("/reviews.json").then((res) => res.json()),
       },
     ],
   },
