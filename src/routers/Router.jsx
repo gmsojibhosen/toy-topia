@@ -3,6 +3,7 @@ import MainLayout from "../Layouts/MainLayout";
 import NotFound from "../pages/NotFound";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+
 import Home from "../pages/Home";
 import AllToys from "../components/AllToys";
 import Reviews from "../components/Reviews";
@@ -36,7 +37,6 @@ export const router = createBrowserRouter([
         element: <Reviews />,
         loader: () => fetch("/reviews.json").then((res) => res.json()),
       },
-      
     ],
   },
 ]);

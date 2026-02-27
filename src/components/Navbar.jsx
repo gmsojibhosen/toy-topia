@@ -15,7 +15,7 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="hover:bg-yellow-400" to={"/srcprofile"}>
+        <NavLink className="hover:bg-yellow-400" to={"profile"}>
           My Profile
         </NavLink>
       </li>
@@ -75,7 +75,12 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="">
-            <a className="btn px-6 mr-3 bg-yellow-400 text-gray-600">Login</a>
+            <Link
+               to="/register"
+              className="btn px-6 mr-3 bg-yellow-400 text-gray-600"
+            >
+              Register
+            </Link>
           </div>
         </div>
       </div>
