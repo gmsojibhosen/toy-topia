@@ -1,15 +1,27 @@
-import React from "react";
+import React, { use, } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../context/AuthProvider";
 
 const Register = () => {
-  const handleLogin = (e) => {
+  const { createUser } = use(AuthContext)
+
+  const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
+    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(name, email, password);
+    console.log({ name, photo, email, password });
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   return (
@@ -21,7 +33,7 @@ const Register = () => {
           </h1>
         </div>
         <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
-          <form onSubmit={handleLogin} className="card-body">
+          <form onSubmit={handleRegister} className="card-body">
             <fieldset className="fieldset w-full">
               <label className="label">Name</label>
               <input
@@ -46,6 +58,7 @@ const Register = () => {
                 className="input w-full"
                 placeholder="Email"
               />
+
               <label className="label">Password</label>
               <input
                 name="password"
@@ -53,15 +66,17 @@ const Register = () => {
                 className="input w-full"
                 placeholder="Password"
               />
+
               <div>
                 <p>
-                  Already have a account?
+                  Already have an account?
                   <Link to={"/login"} className="font-bold underline">
                     Log in
                   </Link>
                 </p>
               </div>
-              <button className="btn  mt-4 bg-yellow-400 ">
+
+              <button type="submit" className="btn mt-4 bg-yellow-400">
                 Create an account
               </button>
             </fieldset>

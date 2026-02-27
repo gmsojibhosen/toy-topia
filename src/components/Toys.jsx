@@ -20,7 +20,7 @@ const Toys = ({ toys }) => {
           </div>
 
           <p className="text-gray-600 mb-1">
-            <span className="font-medium">Available:</span> {availableQuantity}
+            <span className="font-medium">Remaining:</span> {availableQuantity}
           </p>
         </div>
 
