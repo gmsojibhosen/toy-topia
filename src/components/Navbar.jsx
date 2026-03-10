@@ -4,15 +4,16 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 
 const Navbar = () => {
-  const { user, signOut } = use(AuthContext);
+  const { user, logOut } = use(AuthContext);
   const handleLogOut = () => {
     console.log("user trying to log out");
-    signOut()
+
+    logOut()
       .then(() => {
         alert("You Logged out successfully");
       })
       .catch((error) => {
-        alert(error)
+        alert(error);
       });
   };
   const navLink = (
@@ -87,7 +88,7 @@ const Navbar = () => {
               <Link
                 to="/login"
                 className="btn px-5 mr-3 bg-yellow-400 text-gray-600"
-              ></Link>
+              >Login</Link>
             )}
           </div>
         </div>
