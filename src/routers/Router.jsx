@@ -8,6 +8,7 @@ import Home from "../pages/Home";
 import AllToys from "../components/AllToys";
 import Reviews from "../components/Reviews";
 import ToyDetails from "../components/ToyDetails";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -40,7 +41,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/toyDetails/:id",
-        element: <ToyDetails />,
+        element: (
+          <PrivateRoute>
+            <ToyDetails />
+          </PrivateRoute>
+        ),
         loader: () => fetch("/toys.json").then((res) => res.json()),
       },
     ],

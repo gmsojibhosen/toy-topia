@@ -14,30 +14,35 @@ import { auth } from "../firebase/auth";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  console.log(user);
+  const [loading, setLoading] = useState(true);
+
+  console.log(user, loading);
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const loginUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
   const logOut = () => {
     return signOut(auth);
-  } 
- useEffect(() => {
-   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-     setUser(currentUser);
+  };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(true);
 
-     if (currentUser) {
-       console.log("User Logged In");
-     } else {
-       console.log("User Logged Out");
-     }
-   });
+      if (currentUser) {
+        console.log("User Logged In");
+      } else {
+        console.log("User Logged Out");
+      }
+    });
 
-   return () => unsubscribe();
- }, []);
+    return () => unsubscribe();
+  }, []);
 
   const authData = {
     user,
@@ -45,8 +50,12 @@ const AuthProvider = ({ children }) => {
     createUser,
     loginUser,
     logOut,
+    loading,
+    setLoading,
   };
-  return <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>
+  );
 };
 
 export default AuthProvider;
