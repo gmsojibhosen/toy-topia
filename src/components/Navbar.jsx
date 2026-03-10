@@ -1,7 +1,20 @@
-import React from "react";
+import React, { use } from "react";
+import { FaUser, FaUserAltSlash } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../context/AuthProvider";
 
 const Navbar = () => {
+  const { user, signOut } = use(AuthContext);
+  const handleLogOut = () => {
+    console.log("user trying to log out");
+    signOut()
+      .then(() => {
+        alert("You Logged out successfully");
+      })
+      .catch((error) => {
+        alert(error)
+      });
+  };
   const navLink = (
     <>
       <li className="mr-2">
@@ -55,32 +68,27 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li className="mr-2">
-              <NavLink className="hover:bg-yellow-400" to={"/"}>
-                Home
-              </NavLink>
-            </li>
-            <li className="mr-2">
-              <NavLink className="hover:bg-yellow-400" to={"toys"}>
-                Toys
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="hover:bg-yellow-400" to={"/srcprofile"}>
-                My Profile
-              </NavLink>
-            </li>
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navLink}</ul>
         </div>
         <div className="navbar-end">
-          <div className="">
-            <Link
-               to="/register"
-              className="btn px-6 mr-3 bg-yellow-400 text-gray-600"
-            >
-              Register
-            </Link>
+          <div className="flex items-center gap-3">
+            <div className="border-2 rounded-full p-2">
+              {user ? <FaUserAltSlash /> : <FaUser />}
+            </div>
+
+            {user ? (
+              <button
+                onClick={handleLogOut}
+                className="btn px-5 mr-3 bg-yellow-400 text-gray-600"
+              >
+                Log Out
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="btn px-5 mr-3 bg-yellow-400 text-gray-600"
+              ></Link>
+            )}
           </div>
         </div>
       </div>

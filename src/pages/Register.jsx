@@ -1,9 +1,9 @@
-import React, { use, } from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 
 const Register = () => {
-  const { createUser } = use(AuthContext)
+  const {setUser, createUser } = use(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -17,10 +17,14 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        const user = result.user;
+        setUser(user)
+        // console.log(user);
       })
       .catch((error) => {
-        console.log(error.message);
+        const errorCode = error.code;
+        const errorMassage = error.massage;
+        alert(errorMassage, errorCode);
       });
   };
 
@@ -41,6 +45,7 @@ const Register = () => {
                 type="text"
                 className="input w-full"
                 placeholder="Name"
+                required
               />
 
               <label className="label">photoURL</label>
@@ -49,6 +54,7 @@ const Register = () => {
                 type="text"
                 className="input w-full"
                 placeholder="photoURL"
+                required
               />
 
               <label className="label">Email</label>
@@ -57,6 +63,7 @@ const Register = () => {
                 type="email"
                 className="input w-full"
                 placeholder="Email"
+                required
               />
 
               <label className="label">Password</label>
@@ -65,13 +72,14 @@ const Register = () => {
                 type="password"
                 className="input w-full"
                 placeholder="Password"
+                required
               />
 
               <div>
                 <p>
                   Already have an account?
                   <Link to={"/login"} className="font-bold underline">
-                    Log in
+                    Login
                   </Link>
                 </p>
               </div>
