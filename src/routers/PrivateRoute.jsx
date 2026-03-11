@@ -1,10 +1,11 @@
 import React, { Children, use } from "react";
 import { AuthContext } from "../context/AuthProvider";
-import { Navigate } from "react-router";
+import { Navigate, useLocation } from "react-router";
 import Loading from "../components/Loading";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = use(AuthContext);
+  const location = useLocation();
 
   if (user && user.email) {
     return children;
@@ -12,7 +13,7 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return <Loading />;
   }
-  return <Navigate to={"/login"}></Navigate>;
+  return <Navigate state={location.pathname} to={"/login"}></Navigate>;
 };
 
 export default PrivateRoute;

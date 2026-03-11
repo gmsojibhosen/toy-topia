@@ -1,28 +1,30 @@
-import React, { use } from "react";
-import { Link } from "react-router";
+import React, { use, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 
 const Login = () => {
+  const [error, setError] = useState("")
   const { loginUser } = use(AuthContext);
+  const location = useLocation();
 
+const navigate = useNavigate()
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log({ email, password });
-
-      loginUser(email, password)
-        .then((result) => {
-          const user = result.user;
-          console.log(user);
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMassage = error.massage;
-          alert(errorMassage, errorCode);
-        });
+    loginUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(`${location.state? location.state : "/"}`)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        // const errorMassage = error.massage;
+        setError(errorCode);
+      });
   };
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -40,6 +42,7 @@ const Login = () => {
                   type="email"
                   className="input w-full"
                   placeholder="Email"
+                  required
                 />
 
                 <label className="label">Password</label>
@@ -48,6 +51,7 @@ const Login = () => {
                   type="password"
                   className="input w-full"
                   placeholder="Password"
+                  required
                 />
 
                 <div>
@@ -57,7 +61,7 @@ const Login = () => {
                     </Link>
                   </p>
                 </div>
-
+                {error && <p className="text-red-500">{ error}</p>}
                 <button type="submit" className="btn mt-4 bg-yellow-400">
                   Login
                 </button>
@@ -65,7 +69,9 @@ const Login = () => {
             </form>
             <p className="text-gray-800">
               Don't have account?{" "}
-              <Link to={"/register"} className="font-bold underline">Sign up now!</Link>
+              <Link to={"/register"} className="font-bold underline">
+                Sign up now!
+              </Link>
             </p>
           </div>
         </div>

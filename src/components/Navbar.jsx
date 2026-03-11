@@ -1,16 +1,15 @@
 import React, { use } from "react";
 import { FaUser, FaUserAltSlash } from "react-icons/fa";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
+const navigate = useNavigate();
   const handleLogOut = () => {
-    console.log("user trying to log out");
-
     logOut()
       .then(() => {
-        alert("You Logged out successfully");
+        navigate("/");
       })
       .catch((error) => {
         alert(error);
@@ -88,7 +87,9 @@ const Navbar = () => {
               <Link
                 to="/login"
                 className="btn px-5 mr-3 bg-yellow-400 text-gray-600"
-              >Login</Link>
+              >
+                Login
+              </Link>
             )}
           </div>
         </div>
