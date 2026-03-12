@@ -3,22 +3,24 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 
 const Login = () => {
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
+  
   const { loginUser } = use(AuthContext);
   const location = useLocation();
 
-const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
 
+
     loginUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate(`${location.state? location.state : "/"}`)
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -53,7 +55,6 @@ const navigate = useNavigate()
                   placeholder="Password"
                   required
                 />
-
                 <div>
                   <p>
                     <Link to={""} className="font-bold underline">
@@ -61,7 +62,7 @@ const navigate = useNavigate()
                     </Link>
                   </p>
                 </div>
-                {error && <p className="text-red-500">{ error}</p>}
+                {error && <p className="text-red-500">{error}</p>}
                 <button type="submit" className="btn mt-4 bg-yellow-400">
                   Login
                 </button>

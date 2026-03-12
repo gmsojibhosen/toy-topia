@@ -72,9 +72,17 @@ const navigate = useNavigate();
         </div>
         <div className="navbar-end">
           <div className="flex items-center gap-3">
-            <div className="border-2 rounded-full p-2">
-              {user ? <FaUserAltSlash /> : <FaUser />}
-            </div>
+          <div className="border-2 rounded-full p-1 w-10 h-10 overflow-hidden flex items-center justify-center">
+  {user?.photoURL ? (
+    <img
+      src={user.photoURL}
+      alt="user"
+      className="w-full h-full object-cover rounded-full"
+    />
+  ) : (
+    <FaUser />
+  )}
+</div>
 
             {user ? (
               <button

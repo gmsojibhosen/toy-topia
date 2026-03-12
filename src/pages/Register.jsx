@@ -1,32 +1,42 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 
 const Register = () => {
   const { setUser, createUser } = use(AuthContext);
 
   const [nameError, setNameError] = useState();
-
+  const [passwordError, setPasswordError] = useState("");
+  const location = useLocation()
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
-   if (name.trim().length < 5) {
-     setNameError("Name must be at least 5 characters");
-     return;
-   } else {
-     setNameError("");
-   }
+    if (name.trim().length < 5) {
+      setNameError("Name must be at least 5 characters");
+      return;
+    } else {
+      setNameError("");
+    }
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      setPasswordError(
+        "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.",
+      );
+      return;
+    }
+    setPasswordError("");
     console.log({ name, photo, email, password });
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         setUser(user);
+        navigate(`${location.state ? location.state : "/"}`);
         // console.log(user);
       })
       .catch((error) => {
@@ -55,7 +65,7 @@ const Register = () => {
                 placeholder="Name"
                 required
               />
-              {nameError && <p className="text-red-500">{nameError }</p>}
+              {nameError && <p className="text-red-500">{nameError}</p>}
               <label className="label">photoURL</label>
               <input
                 name="photo"
@@ -84,6 +94,8 @@ const Register = () => {
               />
 
               <div>
+                {passwordError && <p className="text-red-500">{passwordError}</p>}
+
                 <p>
                   Already have an account?
                   <Link to={"/login"} className="font-bold underline">

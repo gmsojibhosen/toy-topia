@@ -48,6 +48,7 @@ export const router = createBrowserRouter([
         ),
         loader: () => fetch("/toys.json").then((res) => res.json()),
       },
+      
     ],
   },
 ]);
