@@ -3,11 +3,11 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 
 const Register = () => {
-  const { setUser, createUser } = use(AuthContext);
+  const { setUser, createUser, updateUser } = use(AuthContext);
 
   const [nameError, setNameError] = useState();
   const [passwordError, setPasswordError] = useState("");
-  const location = useLocation()
+  const location = useLocation();
   const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
@@ -35,7 +35,16 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        setUser(user);
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+          })
+
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+          });
+
         navigate(`${location.state ? location.state : "/"}`);
         // console.log(user);
       })
@@ -94,7 +103,9 @@ const Register = () => {
               />
 
               <div>
-                {passwordError && <p className="text-red-500">{passwordError}</p>}
+                {passwordError && (
+                  <p className="text-red-500">{passwordError}</p>
+                )}
 
                 <p>
                   Already have an account?
