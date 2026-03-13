@@ -118,7 +118,7 @@ const Register = () => {
                   }}
                   className="absolute  right-4 top-3 cursor-pointer text-lg text-gray-500"
                 >
-                  {showPassword ? <IoEye /> : <IoEyeOff />}
+                  {showPassword ? <IoEyeOff /> : <IoEye />}
                 </span>
               </div>
               <div>

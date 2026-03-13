@@ -8,7 +8,7 @@
     "rating": 4.7,
     "availableQuantity": 75,
     "description": "A timeless set of colorful Lego bricks that encourages creativity and problem-solving.",
-    "pictureURL": "https://i.ibb.co.com/7tHBVYPp/alexas-fotos-puppet-1636124-1920.jpg",
+    "pictureURL": "https://i.ibb.co.com/1Y3G5xKm/vanessa-bucceri-g-Di-Rw-IYAMA8-unsplash.jpg",
     "subCategory": "Building Blocks"
   },
   {
@@ -20,7 +20,7 @@
     "rating": 4.5,
     "availableQuantity": 60,
     "description": "High-speed remote control car with durable wheels and long battery life.",
-    "pictureURL": "https://i.ibb.co.com/7tHBVYPp/alexas-fotos-puppet-1636124-1920.jpg",
+    "pictureURL": "https://i.ibb.co.com/DDkFYwSK/chris-hardy-H5-Ffv4-I5-ZMI-unsplash.jpg",
     "subCategory": "Remote Toys"
   },
   {
@@ -32,7 +32,7 @@
     "rating": 4.6,
     "availableQuantity": 120,
     "description": "Educational wooden puzzle set to improve memory and logic skills.",
-    "pictureURL": "https://i.ibb.co.com/7tHBVYPp/alexas-fotos-puppet-1636124-1920.jpg",
+    "pictureURL": "https://i.ibb.co.com/4wMT3qry/jerry-wang-q-Br-F1yu5-Wys-unsplash.jpg",
     "subCategory": "Educational Toys"
   },
   {
@@ -44,7 +44,7 @@
     "rating": 4.4,
     "availableQuantity": 40,
     "description": "Classic toy train set with tracks and multiple coaches.",
-    "pictureURL": "https://i.ibb.co.com/7tHBVYPp/alexas-fotos-puppet-1636124-1920.jpg",
+    "pictureURL": "https://i.ibb.co.com/RJJhbRV/viswaprem-anbarasapandian-co1r-UEde-VFQ-unsplash.jpg",
     "subCategory": "Vehicles"
   },
   {
@@ -56,7 +56,7 @@
     "rating": 4.3,
     "availableQuantity": 90,
     "description": "Superhero action figure with movable joints.",
-    "pictureURL": "https://i.ibb.co.com/7tHBVYPp/alexas-fotos-puppet-1636124-1920.jpg",
+    "pictureURL": "https://i.ibb.co.com/nMJ6mWhX/sandy-millar-cm-QR-e34-Hf0-unsplash.jpg",
     "subCategory": "Action Figures"
   },
   {
@@ -68,7 +68,7 @@
     "rating": 4.8,
     "availableQuantity": 30,
     "description": "Beautiful doll house with furniture and accessories.",
-    "pictureURL": "https://i.ibb.co.com/7tHBVYPp/alexas-fotos-puppet-1636124-1920.jpg",
+    "pictureURL": "https://i.ibb.co.com/hRRNhm7C/pauli-nie-Mh-I69q6-Qr-NI-unsplash.jpg",
     "subCategory": "Dolls"
   },
   {
@@ -92,7 +92,7 @@
     "rating": 4.9,
     "availableQuantity": 200,
     "description": "Soft and cuddly teddy bear for kids of all ages.",
-    "pictureURL": "https://i.ibb.co.com/7tHBVYPp/alexas-fotos-puppet-1636124-1920.jpg",
+    "pictureURL": "https://i.ibb.co.com/VphG353Z/beequip-Dr-Uc34-KJJ7-M-unsplash.jpg",
     "subCategory": "Soft Toys"
   },
   {
@@ -104,7 +104,7 @@
     "rating": 4.6,
     "availableQuantity": 50,
     "description": "Kids toy kitchen set with utensils and stove.",
-    "pictureURL": "https://i.ibb.co.com/7tHBVYPp/alexas-fotos-puppet-1636124-1920.jpg",
+    "pictureURL": "https://i.ibb.co.com/6cXdRBpn/rei-yamazaki-9r-Ce9r-OWKb-Y-unsplash.jpg",
     "subCategory": "Pretend Play"
   },
   {
@@ -116,7 +116,7 @@
     "rating": 4.4,
     "availableQuantity": 85,
     "description": "Doctor role-play kit for kids.",
-    "pictureURL": "https://i.ibb.co.com/7tHBVYPp/alexas-fotos-puppet-1636124-1920.jpg",
+    "pictureURL": "https://i.ibb.co.com/DPzgT8T8/alexas-fotos-teddy-bear-797577-1280.jpg",
     "subCategory": "Pretend Play"
   },
 
@@ -129,7 +129,7 @@
     "rating": 4.3,
     "availableQuantity": 70,
     "description": "Plastic toy airplane with smooth wheels.",
-    "pictureURL": "https://cdn.pixabay.com/photo/2014/04/02/10/55/airplane-304558_1280.png",
+    "pictureURL": "https://i.ibb.co.com/cSWcCV7P/ta98mori-lego-3602218-1280.jpg",
     "subCategory": "Vehicles"
   },
   {
@@ -141,103 +141,7 @@
     "rating": 4.6,
     "availableQuantity": 35,
     "description": "Interactive toy robot with lights and sounds.",
-    "pictureURL": "https://cdn.pixabay.com/photo/2017/01/06/19/15/robot-1952826_1280.jpg",
+    "pictureURL": "https://i.ibb.co.com/svTzZXSP/alexas-fotos-play-stone-1743645-1920.jpg",
     "subCategory": "Electronic Toys"
-  },
-  {
-    "toyId": 13,
-    "toyName": "Coloring Book Set",
-    "sellerName": "Art Kids",
-    "sellerEmail": "hello@artkids.com",
-    "price": 9.99,
-    "rating": 4.5,
-    "availableQuantity": 300,
-    "description": "Creative coloring book set with crayons.",
-    "pictureURL": "https://cdn.pixabay.com/photo/2016/11/29/09/08/coloring-1867081_1280.jpg",
-    "subCategory": "Art & Craft"
-  },
-  {
-    "toyId": 14,
-    "toyName": "Toy Basketball",
-    "sellerName": "Sports Junior",
-    "sellerEmail": "info@sportsjunior.com",
-    "price": 12.99,
-    "rating": 4.2,
-    "availableQuantity": 150,
-    "description": "Lightweight basketball for kids.",
-    "pictureURL": "https://cdn.pixabay.com/photo/2017/01/31/13/14/basketball-2025606_1280.png",
-    "subCategory": "Sports Toys"
-  },
-  {
-    "toyId": 15,
-    "toyName": "Toy Guitar",
-    "sellerName": "Music Kids",
-    "sellerEmail": "support@musickids.com",
-    "price": 21.99,
-    "rating": 4.4,
-    "availableQuantity": 65,
-    "description": "Toy guitar that helps kids explore music.",
-    "pictureURL": "https://cdn.pixabay.com/photo/2016/03/27/19/31/guitar-1281745_1280.jpg",
-    "subCategory": "Musical Toys"
-  },
-  {
-    "toyId": 16,
-    "toyName": "Toy Fire Truck",
-    "sellerName": "Rescue Toys",
-    "sellerEmail": "hello@rescuetoys.com",
-    "price": 26.99,
-    "rating": 4.6,
-    "availableQuantity": 55,
-    "description": "Fire truck toy with ladder and siren.",
-    "pictureURL": "https://cdn.pixabay.com/photo/2017/03/27/13/54/fire-truck-2179528_1280.jpg",
-    "subCategory": "Vehicles"
-  },
-  {
-    "toyId": 17,
-    "toyName": "Toy Dinosaur",
-    "sellerName": "Dino World",
-    "sellerEmail": "info@dinoworld.com",
-    "price": 17.99,
-    "rating": 4.7,
-    "availableQuantity": 140,
-    "description": "Realistic dinosaur toy for kids.",
-    "pictureURL": "https://cdn.pixabay.com/photo/2017/08/01/09/24/dinosaur-2567335_1280.jpg",
-    "subCategory": "Animal Toys"
-  },
-  {
-    "toyId": 18,
-    "toyName": "Toy Police Car",
-    "sellerName": "City Toys",
-    "sellerEmail": "support@citytoys.com",
-    "price": 23.99,
-    "rating": 4.3,
-    "availableQuantity": 80,
-    "description": "Police car toy with flashing lights.",
-    "pictureURL": "https://cdn.pixabay.com/photo/2016/10/25/12/28/police-car-1768536_1280.jpg",
-    "subCategory": "Vehicles"
-  },
-  {
-    "toyId": 19,
-    "toyName": "Kids Learning Tablet",
-    "sellerName": "Edu Tech",
-    "sellerEmail": "contact@edutech.com",
-    "price": 54.99,
-    "rating": 4.5,
-    "availableQuantity": 45,
-    "description": "Learning tablet with games and lessons for kids.",
-    "pictureURL": "https://cdn.pixabay.com/photo/2016/11/29/09/08/tablet-1867082_1280.jpg",
-    "subCategory": "Educational Toys"
-  },
-  {
-    "toyId": 20,
-    "toyName": "Toy Fishing Game",
-    "sellerName": "Fun Play",
-    "sellerEmail": "hello@funplay.com",
-    "price": 16.99,
-    "rating": 4.4,
-    "availableQuantity": 95,
-    "description": "Magnetic fishing game for kids.",
-    "pictureURL": "https://cdn.pixabay.com/photo/2017/02/15/11/47/fishing-2066474_1280.jpg",
-    "subCategory": "Games"
   }
 ]

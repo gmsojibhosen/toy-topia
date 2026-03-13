@@ -47,12 +47,10 @@ const Login = () => {
   };
 
   const handleForgetPassword = () => {
-    const email =  emailRef.current.value;
+    const email = emailRef.current.value;
     forgetPassword(email)
       .then(() => {
         alert("Password reset email sent");
-
-      
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -94,7 +92,7 @@ const Login = () => {
                     }}
                     className="absolute  right-4 top-3 cursor-pointer text-lg text-gray-500"
                   >
-                    {showPassword ? <IoEye /> : <IoEyeOff />}
+                    {showPassword ? <IoEyeOff /> : <IoEye />}
                   </span>
                 </div>
 
