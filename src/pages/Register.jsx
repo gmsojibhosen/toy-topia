@@ -7,7 +7,8 @@ const Register = () => {
   useEffect(() => {
     document.title = "Register - ToyTopia";
   }, []);
-  const { setUser, createUser, updateUser } = use(AuthContext);
+  const { setUser, createUser, updateUser,} =
+    use(AuthContext);
 
   const [nameError, setNameError] = useState();
   const [passwordError, setPasswordError] = useState("");
@@ -31,7 +32,7 @@ const Register = () => {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
     if (!passwordRegex.test(password)) {
       setPasswordError(
-        "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.",
+        "Password must be at least 6 characters long and include uppercase, lowercase, number, and special character.",
       );
       return;
     }
@@ -41,18 +42,21 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        updateUser({ displayName: name, photoURL: photo })
-          .then(() => {
-            setUser({ ...user, displayName: name, photoURL: photo });
-          })
+        if (user.emailVerified) {
+          alert("Please verify your email address")
+        }
+          updateUser({ displayName: name, photoURL: photo })
+            .then(() => {
+              setUser({ ...user, displayName: name, photoURL: photo });
+            })
 
-          .catch((error) => {
-            console.log(error);
-            setUser(user);
-          });
-
+            .catch((error) => {
+              console.log(error);
+              setUser(user);
+            });
+       
         navigate(`${location.state ? location.state : "/"}`);
-        // console.log(user);
+      
       })
       .catch((error) => {
         const errorCode = error.code;

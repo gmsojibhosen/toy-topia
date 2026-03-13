@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { use, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 import { IoEye, IoEyeOff } from "react-icons/io5";
@@ -9,10 +9,10 @@ const Login = () => {
   }, []);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUser, createGoogleUser } = use(AuthContext);
+  const { loginUser, createGoogleUser, forgetPassword } = use(AuthContext);
   const location = useLocation();
-
   const navigate = useNavigate();
+  const emailRef = useRef();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -45,6 +45,20 @@ const Login = () => {
         alert(error.message);
       });
   };
+
+  const handleForgetPassword = () => {
+    const email =  emailRef.current.value;
+    forgetPassword(email)
+      .then(() => {
+        alert("Password reset email sent");
+
+      
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        alert(errorMessage);
+      });
+  };
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col w-full">
@@ -60,6 +74,7 @@ const Login = () => {
                   name="email"
                   type="email"
                   className="input w-full"
+                  ref={emailRef}
                   placeholder="Email"
                   required
                 />
@@ -83,12 +98,8 @@ const Login = () => {
                   </span>
                 </div>
 
-                <div>
-                  <p>
-                    <Link to={""} className="font-bold underline">
-                      Forget password
-                    </Link>
-                  </p>
+                <div onClick={handleForgetPassword}>
+                  <a className="font-bold underline">Forget password</a>
                 </div>
                 {error && <p className="text-red-500">{error}</p>}
                 <button type="submit" className="btn mt-4 bg-yellow-400">
