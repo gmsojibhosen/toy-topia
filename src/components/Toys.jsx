@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router';
 
 const Toys = ({ toys }) => {
+  useEffect(() => {
+      document.title = "Toys - ToyTopia";
+    }, []);
     const {toyId, toyName, rating, availableQuantity, price, pictureURL } = toys;
     return (
       <div className="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition">
@@ -21,7 +24,7 @@ const Toys = ({ toys }) => {
           </div>
 
           <p className="text-gray-600 mb-1">
-            <span className="font-medium">Remaining:</span> {availableQuantity}
+            <span className="font-medium">Stock:</span> {availableQuantity}
           </p>
         </div>
 

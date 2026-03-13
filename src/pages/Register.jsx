@@ -1,12 +1,18 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
+import { IoEye, IoEyeOff } from "react-icons/io5";
 
 const Register = () => {
+  useEffect(() => {
+    document.title = "Register - ToyTopia";
+  }, []);
   const { setUser, createUser, updateUser } = use(AuthContext);
 
   const [nameError, setNameError] = useState();
   const [passwordError, setPasswordError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
   const location = useLocation();
   const navigate = useNavigate();
   const handleRegister = (e) => {
@@ -94,20 +100,29 @@ const Register = () => {
               />
 
               <label className="label">Password</label>
-              <input
-                name="password"
-                type="password"
-                className="input w-full"
-                placeholder="Password"
-                required
-              />
-
+              <div className="relative">
+                <input
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  className="input w-full"
+                  placeholder="Password"
+                  required
+                />
+                <span
+                  onClick={() => {
+                    setShowPassword(!showPassword);
+                  }}
+                  className="absolute  right-4 top-3 cursor-pointer text-lg text-gray-500"
+                >
+                  {showPassword ? <IoEye /> : <IoEyeOff />}
+                </span>
+              </div>
               <div>
                 {passwordError && (
                   <p className="text-red-500">{passwordError}</p>
                 )}
 
-                <p>
+                <p className="text-gray-800">
                   Already have an account?
                   <Link to={"/login"} className="font-bold underline">
                     Login

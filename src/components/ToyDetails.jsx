@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router";
+import TryNowForm from "./TryNowForm";
 
 const ToyDetails = () => {
+  useEffect(() => {
+      document.title = "toy Details - ToyTopia";
+    }, []);
   const { id } = useParams();
   const toyId = parseInt(id);
   const toyDetails = useLoaderData();
@@ -18,10 +22,6 @@ const ToyDetails = () => {
     subCategory,
   } = toy;
   
-    const handleBuyNow = () => {
-        alert(`You have bought ${toyName} for $${price}!`);
-        
-    };
   return (
     <div className="mt-5 max-w-md mx-auto bg-white shadow-lg rounded-xl overflow-hidden p-5">
       <img
@@ -55,11 +55,9 @@ const ToyDetails = () => {
           <p>{sellerName}</p>
           <p className="text-gray-500 text-sm">{sellerEmail}</p>
         </div>
-
-        <button onClick={handleBuyNow} className="w-full mt-4 gray-700 font-bold bg-yellow-400   p-3 rounded-xl hover:bg-yellow-400 transition">
-          Buy Now
-        </button>
       </div>
+
+      <TryNowForm></TryNowForm>
     </div>
   );
 };
