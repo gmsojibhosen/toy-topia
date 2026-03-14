@@ -1,16 +1,34 @@
-# React + Vite
+# project name
+- Toy Topia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## purpose
+ToyTopia is a React + Firebase web application playful online marketplace for kids' toys, encouraging families to discover and support local toy sellers. Users can log in, browse toys, view detailed info, and leave feedback for toys they want to buy for their kids..
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live URL
+🔗 [ToyTopia Live](https://your-live-website-link.com)
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## key features
+- Email & Password Authentication
+- Google Login
+- User Profile Management (Name & Photo)
+- Show / Hide Password Feature
+- Responsive Design
+- UI with React + Vite
+- Styled with Tailwind CSS
+- Alerts using SweetAlert2
+- Routing with React Router
+- Sliders using Swiper
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  NPM Packages Used
+    "@tailwindcss/vite": "^4.2.0",
+    "firebase": "^12.9.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.6.0",
+    "react-router": "^7.13.0",
+    "sweetalert2": "^11.26.22",
+    "swiper": "^12.1.2",
+    "tailwindcss": "^4.2.0"
