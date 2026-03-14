@@ -14,7 +14,7 @@ const AllToys = () => {
         <p className="text-gray-700 text-lg">Find toys Wonderful and buy now</p>
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2  gap-4">
         {allToys.map((toys) => (
           <Toys toys={toys}></Toys>
         ))}

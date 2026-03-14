@@ -1,10 +1,10 @@
-import React, { use } from "react";
+import React, {useContext } from "react";
 import { FaUser, FaUserAltSlash } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 
 const Navbar = () => {
-  const { user, logOut } = use(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 const navigate = useNavigate();
   const handleLogOut = () => {
     logOut()
@@ -28,7 +28,7 @@ const navigate = useNavigate();
         </NavLink>
       </li>
       <li>
-        <NavLink className="hover:bg-yellow-400" to={"profile"}>
+        <NavLink className="hover:bg-yellow-400" to={"/myProfile"}>
           My Profile
         </NavLink>
       </li>
@@ -58,7 +58,7 @@ const navigate = useNavigate();
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="z-10 menu menu-sm dropdown-content bg-base-100 rounded-box  mt-3 w-52 p-2 shadow"
             >
               {navLink}
             </ul>

@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, {useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 import { IoEye, IoEyeOff } from "react-icons/io5";
@@ -8,7 +8,7 @@ const Register = () => {
     document.title = "Register - ToyTopia";
   }, []);
   const { setUser, createUser, updateUser,} =
-    use(AuthContext);
+    useContext(AuthContext);
 
   const [nameError, setNameError] = useState();
   const [passwordError, setPasswordError] = useState("");

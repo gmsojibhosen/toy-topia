@@ -1,4 +1,4 @@
-import React, { use, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 import { IoEye, IoEyeOff } from "react-icons/io5";
@@ -9,7 +9,7 @@ const Login = () => {
   }, []);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUser, createGoogleUser, forgetPassword } = use(AuthContext);
+  const { loginUser, createGoogleUser, forgetPassword } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const emailRef = useRef();

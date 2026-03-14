@@ -3,7 +3,6 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   sendPasswordResetEmail,
-  // sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -21,7 +20,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // console.log(user, loading);
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -31,9 +29,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
-  // const emailVerification = () => {
-  //   return sendEmailVerification(auth.currentUser);
-  // };
+
   const updateUser = (updateData) => {
     return updateProfile(auth.currentUser, updateData);
   };
@@ -46,20 +42,13 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
   const forgetPassword = (email) => {
-    return sendPasswordResetEmail(auth, email)
-  }
+    return sendPasswordResetEmail(auth, email);
+  };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
-
-      if (currentUser) {
-        // console.log("User Logged In");
-      } else {
-        // console.log("User Logged Out");
-      }
     });
-
     return () => unsubscribe();
   }, []);
 
@@ -68,7 +57,6 @@ const AuthProvider = ({ children }) => {
     setUser,
     createUser,
     loginUser,
-    // emailVerification,
     createGoogleUser,
     logOut,
     loading,
