@@ -8,7 +8,7 @@ const RatingToy = () => {
  
   return (
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-center my-6 relative ">
+      <h2 className="text-black text-3xl font-bold text-center my-6 relative ">
         Popular Toys
         <span className="block w-20 h-1 bg-yellow-400 mx-auto mt-2 rounded"></span>
       </h2>

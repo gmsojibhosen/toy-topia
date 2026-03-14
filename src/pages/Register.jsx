@@ -80,72 +80,74 @@ const Register = () => {
             Create an account
           </h1>
         </div>
-        <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
-          <form onSubmit={handleRegister} className="card-body">
-            <fieldset className="fieldset w-full">
-              <label className="label">Name</label>
-              <input
-                name="name"
-                type="text"
-                className="input w-full"
-                placeholder="Name"
-                required
-              />
-              {nameError && <p className="text-red-500">{nameError}</p>}
-              <label className="label">photoURL</label>
-              <input
-                name="photo"
-                type="text"
-                className="input w-full"
-                placeholder="photoURL"
-                required
-              />
-
-              <label className="label">Email</label>
-              <input
-                name="email"
-                type="email"
-                className="input w-full"
-                placeholder="Email"
-                required
-              />
-
-              <label className="label">Password</label>
-              <div className="relative">
+        <div className="card  w-full max-w-md shrink-0 shadow-2xl">
+          <div className="card-body bg-white rounded-lg">
+            <form onSubmit={handleRegister}>
+              <fieldset className="fieldset w-full">
+                <label className="label">Name</label>
                 <input
-                  name="password"
-                  type={showPassword ? "text" : "password"}
+                  name="name"
+                  type="text"
                   className="input w-full"
-                  placeholder="Password"
+                  placeholder="Name"
                   required
                 />
-                <span
-                  onClick={() => {
-                    setShowPassword(!showPassword);
-                  }}
-                  className="absolute  right-4 top-3 cursor-pointer text-lg text-gray-500"
-                >
-                  {showPassword ? <IoEyeOff /> : <IoEye />}
-                </span>
-              </div>
-              <div>
-                {passwordError && (
-                  <p className="text-red-500">{passwordError}</p>
-                )}
+                {nameError && <p className="text-red-500">{nameError}</p>}
+                <label className="label">photoURL</label>
+                <input
+                  name="photo"
+                  type="text"
+                  className="input w-full"
+                  placeholder="photoURL"
+                  required
+                />
 
-                <p className="text-gray-800">
-                  Already have an account?
-                  <Link to={"/login"} className="font-bold underline">
-                    Login now
-                  </Link>
-                </p>
-              </div>
+                <label className="label">Email</label>
+                <input
+                  name="email"
+                  type="email"
+                  className="input w-full"
+                  placeholder="Email"
+                  required
+                />
 
-              <button type="submit" className="btn mt-4 bg-yellow-400">
-                Create an account
-              </button>
-            </fieldset>
-          </form>
+                <label className="label">Password</label>
+                <div className="relative">
+                  <input
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    className="input w-full"
+                    placeholder="Password"
+                    required
+                  />
+                  <span
+                    onClick={() => {
+                      setShowPassword(!showPassword);
+                    }}
+                    className="absolute  right-4 top-3 cursor-pointer text-lg text-gray-500"
+                  >
+                    {showPassword ? <IoEyeOff /> : <IoEye />}
+                  </span>
+                </div>
+                <div>
+                  {passwordError && (
+                    <p className="text-red-500">{passwordError}</p>
+                  )}
+
+                  <p className="text-gray-800">
+                    Already have an account?
+                    <Link to={"/login"} className="font-bold underline">
+                      Login now
+                    </Link>
+                  </p>
+                </div>
+
+                <button type="submit" className="btn mt-4 bg-yellow-400">
+                  Create an account
+                </button>
+              </fieldset>
+            </form>
+          </div>
         </div>
       </div>
     </div>

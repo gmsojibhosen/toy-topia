@@ -8,7 +8,7 @@ const MainLayout = () => {
   const {state}  = useNavigation()
   return (
     <div className="bg-gray-100 ">
-      {import.meta.env.VITE_name}
+      
       <nav>
         <Navbar></Navbar>
       </nav>

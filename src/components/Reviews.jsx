@@ -11,7 +11,7 @@ const Reviews = () => {
   }, []);
   return (
     <div className="max-w-7xl mx-auto my-12">
-      <h2 className="text-3xl font-bold text-center my-6">
+      <h2 className="text-black text-3xl font-bold text-center my-6">
         Customer Reviews
         <span className="block w-24 h-1 bg-yellow-400 mx-auto mt-2 rounded"></span>
       </h2>

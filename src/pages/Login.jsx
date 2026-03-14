@@ -76,7 +76,7 @@ const Login = () => {
       .then(() => {
         Swal.fire({
           icon: "success",
-          title: "Password reset email sent",
+          title: "Password reset sent please checked your email",
           timer: 2000,
           showConfirmButton: false,
         });
@@ -90,13 +90,13 @@ const Login = () => {
       });
   };
   return (
-    <div className="hero bg-base-200 min-h-screen">
-      <div className="hero-content flex-col w-full">
+    <div className="hero min-h-screen ">
+      <div className="hero-content flex-col w-full ">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-yellow-400">Login now!</h1>
         </div>
-        <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
-          <div className="card-body">
+        <div className="card w-full max-w-md shrink-0 shadow-2xl ">
+          <div className="card-body bg-white rounded-lg">
             <form onSubmit={handleLogin}>
               <fieldset className="fieldset w-full">
                 <label className="label">Email</label>
@@ -141,9 +141,9 @@ const Login = () => {
                 </button>
               </fieldset>
             </form>
-            <p className="text-gray-800">
+            <p className="text-gray-600">
               Don't have account?{" "}
-              <Link to={"/register"} className="font-bold underline">
+              <Link to={"/register"} className="font-bold underline text-black">
                 Register now!
               </Link>
             </p>

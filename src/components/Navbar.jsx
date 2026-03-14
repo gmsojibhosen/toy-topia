@@ -79,7 +79,7 @@ const navigate = useNavigate();
           <div className="flex items-center gap-3">
             <div
               title={user?.displayName}
-              className="border-2 rounded-full p-1 w-10 h-10 overflow-hidden flex items-center justify-center"
+              className="border-2 rounded-full border-yellow-400 p-1 w-10 h-10 overflow-hidden flex items-center justify-center"
             >
               {user?.photoURL ? (
                 <img
@@ -88,7 +88,7 @@ const navigate = useNavigate();
                   className="w-full h-full object-cover rounded-full"
                 />
               ) : (
-                <FaUserAltSlash />
+                <FaUserAltSlash className="text-yellow-400"></FaUserAltSlash>
               )}
             </div>
 

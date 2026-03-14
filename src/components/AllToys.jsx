@@ -6,7 +6,7 @@ const AllToys = () => {
   const allToys = useLoaderData();
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="bg-linear-to-r from-[#fbdb5b]  to-[#f5b906] rounded-3xl p-8 mb-6 text-center mt-6">
+      <div className="bg-linear-to-r from-[#fbdb5b]  to-[#f5b906] rounded-xl p-8 mb-6 text-center mt-6">
         <h2 className="text-4xl font-extrabold text-gray-800 mb-2">
           Explore Our Fun Toys!
         </h2>
