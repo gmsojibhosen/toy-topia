@@ -2,6 +2,7 @@ import React, {useContext } from "react";
 import { FaUser, FaUserAltSlash } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -12,7 +13,11 @@ const navigate = useNavigate();
         navigate("/");
       })
       .catch((error) => {
-        alert(error);
+          Swal.fire({
+                       icon: "error",
+                       title: error.message,
+                       timer: 2500,
+                     });
       });
   };
   const navLink = (

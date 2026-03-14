@@ -10,6 +10,7 @@ import Reviews from "../components/Reviews";
 import ToyDetails from "../components/ToyDetails";
 import PrivateRoute from "./PrivateRoute";
 import MyProfile from "../pages/MyProfile";
+import Loading from "../components/Loading";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
         index: true,
         element: <Home />,
         loader: () => fetch("/toys.json").then((res) => res.json()),
+        hydrateFallbackElement: <Loading />,
       },
       {
         path: "login",
@@ -34,11 +36,13 @@ export const router = createBrowserRouter([
         path: "toys",
         element: <AllToys />,
         loader: () => fetch("/toys.json").then((res) => res.json()),
+        hydrateFallbackElement: <Loading />,
       },
       {
         path: "reviews",
         element: <Reviews />,
         loader: () => fetch("/reviews.json").then((res) => res.json()),
+        hydrateFallbackElement: <Loading />,
       },
       {
         path: "/toyDetails/:id",
@@ -48,6 +52,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("/toys.json").then((res) => res.json()),
+        hydrateFallbackElement: <Loading />,
       },
 
       {

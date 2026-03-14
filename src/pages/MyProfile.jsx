@@ -40,7 +40,13 @@ const MyProfile = () => {
             });
       })
       .catch((error) => {
-        alert(error.message);
+        const errorMessage = error.errorMessage
+        Swal.fire({
+          icon: "error",
+          title: errorMessage,
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
   };
 

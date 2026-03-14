@@ -4,7 +4,6 @@ import Toys from "./Toys";
 
 const AllToys = () => {
   const allToys = useLoaderData();
-  console.log(allToys);
   return (
     <div className="max-w-7xl mx-auto">
       <div className="bg-linear-to-r from-[#fbdb5b]  to-[#f5b906] rounded-3xl p-8 mb-6 text-center mt-6">
@@ -16,7 +15,7 @@ const AllToys = () => {
 
       <div className="grid lg:grid-cols-4 md:grid-cols-2  gap-4">
         {allToys.map((toys) => (
-          <Toys toys={toys}></Toys>
+          <Toys toys={toys} key={toys.toyId}></Toys>
         ))}
       </div>
     </div>
