@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 import { IoEye, IoEyeOff } from "react-icons/io5";
+import Swal from "sweetalert2";
 
 const Login = () => {
   useEffect(() => {
@@ -9,10 +10,12 @@ const Login = () => {
   }, []);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUser, createGoogleUser, forgetPassword } = useContext(AuthContext);
+  const { loginUser, createGoogleUser, forgetPassword } =
+    useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const emailRef = useRef();
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,15 +23,18 @@ const Login = () => {
     const password = form.password.value;
 
     loginUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: `Login Successful`,
+          timer: 2000,
+          showConfirmButton: false,
+        });
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        // const errorMassage = error.massage;
-        setError(errorCode);
+        const errorMessage = error.message;
+        setError(errorMessage);
       });
   };
 
@@ -36,25 +42,51 @@ const Login = () => {
     createGoogleUser()
       .then((result) => {
         const user = result.user;
+        Swal.fire({
+          icon: "success",
+          title: `Welcome ${user.displayName}`,
+          timer: 1500,
+          showConfirmButton: false,
+        });
         navigate(`${location.state ? location.state : "/"}`);
-        console.log("Google User:", user);
-        alert(`Welcome ${user.displayName}`);
       })
       .catch((error) => {
-        console.error(error);
-        alert(error.message);
+        const errorMessage = error.message;
+        Swal.fire({
+          icon: "error",
+          title: errorMessage,
+          timer: 2500,
+        });
       });
   };
 
   const handleForgetPassword = () => {
     const email = emailRef.current.value;
+
+    if (!email) {
+      Swal.fire({
+        icon: "warning",
+        title: "Please enter your email first",
+        timer: 2000,
+      });
+      return;
+    }
+
     forgetPassword(email)
       .then(() => {
-        alert("Password reset email sent");
+        Swal.fire({
+          icon: "success",
+          title: "Password reset email sent",
+          timer: 2000,
+          showConfirmButton: false,
+        });
       })
       .catch((error) => {
-        const errorMessage = error.message;
-        alert(errorMessage);
+        Swal.fire({
+          icon: "error",
+          title: error.message,
+          timer: 2500,
+        });
       });
   };
   return (
@@ -96,9 +128,13 @@ const Login = () => {
                   </span>
                 </div>
 
-                <div onClick={handleForgetPassword}>
-                  <a className="font-bold underline">Forget password</a>
-                </div>
+                <button
+                  type="button"
+                  onClick={handleForgetPassword}
+                  className="font-bold underline text-left mt-1"
+                >
+                  Forget password
+                </button>
                 {error && <p className="text-red-500">{error}</p>}
                 <button type="submit" className="btn mt-4 bg-yellow-400">
                   Login

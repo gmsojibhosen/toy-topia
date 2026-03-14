@@ -1,16 +1,16 @@
-import React, {useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthProvider";
 import { IoEye, IoEyeOff } from "react-icons/io5";
+import Swal from "sweetalert2";
 
 const Register = () => {
   useEffect(() => {
     document.title = "Register - ToyTopia";
   }, []);
-  const { setUser, createUser, updateUser,} =
-    useContext(AuthContext);
+  const { setUser, createUser, updateUser } = useContext(AuthContext);
 
-  const [nameError, setNameError] = useState();
+  const [nameError, setNameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
@@ -32,36 +32,43 @@ const Register = () => {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
     if (!passwordRegex.test(password)) {
       setPasswordError(
-        "Password must be at least 6 characters long and include uppercase, lowercase, number, and special character.",
+        "Password must be at least 6 characters and include uppercase, lowercase and number.",
       );
       return;
     }
     setPasswordError("");
-    console.log({ name, photo, email, password });
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        if (user.emailVerified) {
-          alert("Please verify your email address")
-        }
-          updateUser({ displayName: name, photoURL: photo })
-            .then(() => {
-              setUser({ ...user, displayName: name, photoURL: photo });
-            })
 
-            .catch((error) => {
-              console.log(error);
-              setUser(user);
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+
+            Swal.fire({
+              icon: "success",
+              title: "Account Created Successfully",
+              timer: 2000,
+              showConfirmButton: false,
             });
-       
-        navigate(`${location.state ? location.state : "/"}`);
-      
+
+            navigate(location.state ? location.state : "/");
+          })
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              title: error.message,
+              timer: 2500,
+            });
+          });
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMassage = error.massage;
-        alert(errorMassage, errorCode);
+        Swal.fire({
+          icon: "error",
+          title: error.message,
+          timer: 2500,
+        });
       });
   };
 
