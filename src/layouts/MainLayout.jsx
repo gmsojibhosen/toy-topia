@@ -9,7 +9,7 @@ const MainLayout = () => {
       <nav>
         <Navbar></Navbar>
       </nav>
-      <main className="px-2 md:px-0">
+      <main className="px-2 lg:px-0">
         <Outlet />
       </main>
       <Footer />
